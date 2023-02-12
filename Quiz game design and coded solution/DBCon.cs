@@ -26,9 +26,11 @@ namespace Quiz_game_design_and_coded_solution
         }
         public static OleDbConnection Connect()
         {
+            string DBasePath = System.Environment.CurrentDirectory;
             try
             {
-                OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.16.0;Data Source=dbQuizGame.accdb");
+                OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.16.0;Data Source=" + 
+                    DBasePath + "/dbQuizGame.accdb");
                 con.Open();
                 return con;
             }
@@ -39,7 +41,8 @@ namespace Quiz_game_design_and_coded_solution
         }
         public static DataSet getDataSet(string SQL)
         {
-            OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.16.0;Data Source=dbQuizGame.accdb");
+            OleDbConnection con = Connect();
+            // Call the function/sub instead (GMK)  // OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.16.0;Data Source=dbQuizGame.accdb");
             try
             {
                 con.Open();

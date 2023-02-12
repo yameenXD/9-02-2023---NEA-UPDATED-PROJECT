@@ -177,3 +177,39 @@ P:\6th Form Computing\16MunirY\NEA FEBURARY WEEK 2 UPDATED\NEA-TECHNICAL-SOLUTIO
 P:\6th Form Computing\16MunirY\NEA FEBURARY WEEK 2 UPDATED\NEA-TECHNICAL-SOLUTION-5-2-2023-main\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.csproj.CopyComplete
 P:\6th Form Computing\16MunirY\NEA FEBURARY WEEK 2 UPDATED\NEA-TECHNICAL-SOLUTION-5-2-2023-main\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.exe
 P:\6th Form Computing\16MunirY\NEA FEBURARY WEEK 2 UPDATED\NEA-TECHNICAL-SOLUTION-5-2-2023-main\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.pdb
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\bin\Debug\Quiz game design and coded solution.exe.config
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\bin\Debug\Quiz game design and coded solution.exe
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\bin\Debug\Quiz game design and coded solution.pdb
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\bin\Debug\System.Data.OleDb.dll
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\bin\Debug\System.Data.OleDb.xml
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.csproj.AssemblyReference.cache
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.csproj.SuggestedBindingRedirects.cache
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz_game_design_and_coded_solution.Entertainment.resources
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz_game_design_and_coded_solution.Food_and_Drink.resources
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz_game_design_and_coded_solution.Form1.resources
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz_game_design_and_coded_solution.General_knowledge_question.resources
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz_game_design_and_coded_solution.History.resources
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz_game_design_and_coded_solution.Properties.Resources.resources
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.csproj.GenerateResource.cache
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.csproj.CoreCompileInputs.cache
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.csproj.CopyComplete
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.exe
+C:\Users\gkiff\Source\Repos\yameenXD\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.pdb
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\bin\Debug\Quiz game design and coded solution.exe.config
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\bin\Debug\Quiz game design and coded solution.exe
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\bin\Debug\Quiz game design and coded solution.pdb
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\bin\Debug\System.Data.OleDb.dll
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\bin\Debug\System.Data.OleDb.xml
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.csproj.AssemblyReference.cache
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.csproj.SuggestedBindingRedirects.cache
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz_game_design_and_coded_solution.Entertainment.resources
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz_game_design_and_coded_solution.Food_and_Drink.resources
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz_game_design_and_coded_solution.Form1.resources
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz_game_design_and_coded_solution.General_knowledge_question.resources
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz_game_design_and_coded_solution.History.resources
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz_game_design_and_coded_solution.Properties.Resources.resources
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.csproj.GenerateResource.cache
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.csproj.CoreCompileInputs.cache
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.csproj.CopyComplete
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.exe
+H:\School\A-Level\NEA\9-02-2023---NEA-UPDATED-PROJECT\Quiz game design and coded solution\obj\Debug\Quiz game design and coded solution.pdb

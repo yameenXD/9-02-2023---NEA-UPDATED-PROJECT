@@ -20,6 +20,7 @@ namespace Quiz_game_design_and_coded_solution
         int score;
         int percentage;
         int totalQuestions;
+        DateTime startTime = DateTime.Now;
         int[] goArray;
         static string FilePath = @"P:\6th Form Computing\16MunirY\NEA FEBURARY WEEK 2 UPDATED\NEA-TECHNICAL-SOLUTION-5-2-2023-main\h.txt";
         List<string> questions;
@@ -27,15 +28,16 @@ namespace Quiz_game_design_and_coded_solution
 
         public History()
         {
-            question_reading();
             InitializeComponent();
-            askQuestion(1, 10);
+            question_reading();
+            askQuestion(0, 9); // Started at 1 should start at 0.
             totalQuestions = 10;
             timer1.Start();
         }
 
         public void question_reading()
         {
+            FilePath = System.Environment.CurrentDirectory + "\\h.txt";
             int count = 0;
             string data;
             FileStream fileStream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
@@ -98,7 +100,7 @@ namespace Quiz_game_design_and_coded_solution
                 button3.Text = questions[qnum + 3];// option 3
                 button4.Text = questions[qnum + 4]; // option 4
 
-                correctAnswer = Convert.ToInt32(questions[(qnum * 6) - 1]); // the correct answer would be the second option in this case
+                correctAnswer = Convert.ToInt32(questions[(qnum * 6) + 5]); // the correct is 5 passed the question
 
                 if (questionNumber == 10)
                 {
@@ -172,7 +174,10 @@ namespace Quiz_game_design_and_coded_solution
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lbltimer.Text = DateTime.Now.ToString("HH:mm:ss");
+            DateTime nowDateTime = DateTime.Now;
+            var currentTime = Math.Abs(startTime.Second - nowDateTime.Second);
+            lbltimer.Text = currentTime.ToString();
+            //  Change by GMK // lbltimer.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
       
