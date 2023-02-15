@@ -23,6 +23,7 @@ namespace Quiz_game_design_and_coded_solution
         int percentage;
         int totalQuestions;
         int[] goArray;
+        DateTime startTime = DateTime.Now;
         string User;
         static string FilePath = @"P:\6th Form Computing\16MunirY\NEA FEBURARY WEEK 2 UPDATED\NEA-TECHNICAL-SOLUTION-5-2-2023-main\e.txt";
         List<string> questions;
@@ -32,7 +33,7 @@ namespace Quiz_game_design_and_coded_solution
         {
             question_reading();
             InitializeComponent();
-            askQuestion(1,10);
+            askQuestion(0,9);
             totalQuestions = 10;
             timer1.Start();
             
@@ -40,6 +41,7 @@ namespace Quiz_game_design_and_coded_solution
 
         public void question_reading()
         {
+            FilePath = System.Environment.CurrentDirectory + "\\e.txt";
             int count = 0;
             string data;
             FileStream fileStream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
@@ -69,62 +71,41 @@ namespace Quiz_game_design_and_coded_solution
 
             }
             optionnumber = 5;
-            questionNumber+=6;
-            askQuestion(questionNumber, optionnumber);
-
-            /*if (questionNumber == totalQuestions)
-            {
-                // Working out the percentage 
-
-                percentage = (int)Math.Round((double)(score * 100) / totalQuestions);
-
-                // this will display when the quiz has ended 
-                MessageBox.Show("Quiz Ended!" + Environment.NewLine + "You have answered " + score + "questions correctly" + Environment.NewLine +
-                    "Your total percentage is" + percentage + "%" + Environment.NewLine +
-                    "Click OK to play again");
-                score = 0; // this will reset the code to 0
-                questionNumber = 0;
-                askQuestion(questionNumber, 0);
-            }*/
+            questionNumber+=1;
+            askQuestion(questionNumber, optionnumber);  
         }
         private void askQuestion(int qnum, int optionnumber)
         {
             pictureBox1.Image = Properties.Resources.images;
+            label1.Text = questions[qnum - 1]; // the question asked to the user
+            string[] options = new string[] { questions[qnum + 1], questions[qnum + 2], questions[qnum + 3], questions[qnum + 4] };
             try
             {
-                label1.Text = questions[qnum - 1]; // the question asked to the user
-                button1.Text = questions[qnum]; // option 1
-                button2.Text = questions[qnum + 1]; // option 2
-                button3.Text = questions[qnum + 2];// option 3
-                button4.Text = questions[qnum + 3]; // option 4
+                label1.Text = questions[qnum]; // the question asked to the user
+                button1.Text = options[0]; // option 1
+                button2.Text = options[1]; // option 2
+                button3.Text = options[2];// option 3
+                button4.Text = options[3]; // option 4
 
-                correctAnswer = Convert.ToInt32(questions[qnum + 4]); // the correct answer would be the second option in this case  
-            }
-            catch
-            {
-                percentage = (int)Math.Round((double)(score * 100) / totalQuestions);
-                MessageBox.Show("Quiz Ended!" + Environment.NewLine + "You have answered " + score + "questions correctly" + Environment.NewLine +
-                    "Your total percentage is" + percentage + "%" + Environment.NewLine +
-                    "Click OK to play again");
+                correctAnswer = Convert.ToInt32(questions[(qnum * 6) + 5]); // the correct answer would be the second option in this case  
                 if (questionNumber == 10)
                 {
+                    timer1.Stop();
+                    percentage = (int)Math.Round((double)(score * 100) / totalQuestions);
+                    MessageBox.Show("Quiz Ended!" + Environment.NewLine + "You have answered " + score + "questions correctly" + Environment.NewLine +
+                        "Your total percentage is" + percentage + "%" + Environment.NewLine +
+                        "Click OK to play again");
                     score = 0;
                     questionNumber = 0; // this will reset the questionnumber to 0
-                    askQuestion(1, 10);
-                }
-                else if (questionNumber <= 10)
-                {
-                    questionNumber++;
-
+                    DateTime time = DateTime.Now;
+                    string User = lblUserName.Text;
+                    string SQL_2 = "INSERT INTO tblUserScores (UserName, TestDate, Score) VALUES ('" + User + "','" + time + "','" + percentage + "');";
+                    DBCon.AmendAddInsertData_2(SQL_2);
                 }
             }
-            if (questionNumber == 10) 
+            catch(Exception ex)
             {
-                DateTime time = DateTime.Now;
-                percentage = (int)Math.Round((double)(score * 100) / totalQuestions);
-                string User = lblUserName.Text;
-                string SQL_2 = "INSERT INTO tblUserScores (UserName, TestDate, Score) VALUES ('" + User + "','" + time + "','" + percentage + "');";
-                DBCon.AmendAddInsertData_2(SQL_2);
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -163,7 +144,9 @@ namespace Quiz_game_design_and_coded_solution
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lbltimer.Text = DateTime.Now.ToString("HH:mm:ss");
+            DateTime nowDateTime = DateTime.Now;
+            var currentTime = Math.Abs(startTime.Second - nowDateTime.Second);
+            lbltimer.Text = currentTime.ToString();
         }
     }
 }

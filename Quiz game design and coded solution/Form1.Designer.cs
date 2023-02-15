@@ -251,7 +251,7 @@
             this.btnRegister.TabIndex = 28;
             this.btnRegister.Text = "Submit";
             this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click_1);
             // 
             // lblDateOfBirth_label
             // 

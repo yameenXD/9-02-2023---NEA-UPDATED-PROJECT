@@ -10,18 +10,32 @@ using System.Drawing;
 namespace Quiz_game_design_and_coded_solution
 {
     public static class DBCon
+
     {
+        private static string DBasePath = System.Environment.CurrentDirectory;
+        private static string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
+            DBasePath + "/dbQuizGame.accdb";
+
         public static DataSet dataConnect(string SQL)
         {
-            OleDbConnection con = Connect();
+            using (OleDbConnection con = new OleDbConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    OleDbDataAdapter userAdapter = new OleDbDataAdapter(SQL, con);
 
-            OleDbDataAdapter userAdapter = new OleDbDataAdapter(SQL, con);
+                    DataSet dataSet = new DataSet();
+                    userAdapter.Fill(dataSet, "DATA");
 
-            DataSet dataSet = new DataSet();
-
-            userAdapter.Fill(dataSet, "DATA");
-
-            return dataSet;
+                    return dataSet;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                    return null;
+                }
+            }
 
         }
         public static OleDbConnection Connect()
@@ -29,7 +43,7 @@ namespace Quiz_game_design_and_coded_solution
             string DBasePath = System.Environment.CurrentDirectory;
             try
             {
-                OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.16.0;Data Source=" + 
+                OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + 
                     DBasePath + "/dbQuizGame.accdb");
                 con.Open();
                 return con;
@@ -39,45 +53,51 @@ namespace Quiz_game_design_and_coded_solution
                 return null;
             }
         }
+       /* public static DataSet dataConnect(string SQL)
+        {
+            using (OleDbConnection con = new OleDbConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    OleDbDataAdapter userAdapter = new OleDbDataAdapter(SQL, con);
+
+                    DataSet dataSet = new DataSet();
+                    userAdapter.Fill(dataSet, "DATA");
+
+                    return dataSet;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                    return null;
+                }
+            }
+        }*/
         public static DataSet getDataSet(string SQL)
         {
-            OleDbConnection con = Connect();
-            // Call the function/sub instead (GMK)  // OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.16.0;Data Source=dbQuizGame.accdb");
-            try
+            using (OleDbConnection con = new OleDbConnection(connectionString))
             {
-                con.Open();
-                MessageBox.Show("Connected");
-            }
-            catch
-            {
-                MessageBox.Show("Connection failed");
-            }
-            try
-            {
-                OleDbDataAdapter userAdapter = new OleDbDataAdapter(SQL, con);
-                OleDbCommand cmd_2 = new OleDbCommand(SQL, con);
-                DataSet UserData = new DataSet();
-
-                userAdapter.Fill(UserData, "Users");
-                MessageBox.Show("Database Connected");
-                return UserData;
-
-                /*foreach (DataRow row in users.Tables["Users"].Rows)
+                try
                 {
-                    MessageBox.Show(row["UserID"]);
-                }*/
+                    con.Open();
+                    OleDbDataAdapter userAdapter = new OleDbDataAdapter(SQL, con);
+                    DataSet UserData = new DataSet();
+
+                    userAdapter.Fill(UserData, "Users");
+                    return UserData;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                    return null;
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Dataset Failed");
-                return null;
-            }
-            con.Close();
         }
 
         public static void dataConnect()
         {
-            OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.16.0;Data Source=dbQuizGame.accdb");
+            OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=dbQuizGame.accdb");
             try
             {
                 con.Open();
@@ -119,30 +139,20 @@ namespace Quiz_game_design_and_coded_solution
 
         public static void AmendAddInsertData(string SQL) 
         {
-            OleDbConnection con = Connect();
-            try
+            using (OleDbConnection con = new OleDbConnection(connectionString))
             {
-                OleDbCommand cmd = con.CreateCommand();
-                cmd.CommandText = SQL;
-                cmd.Connection = con;
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Data inserted");
+                try
+                {
+                    con.Open();
+                    OleDbCommand cmd = new OleDbCommand(SQL, con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Data inserted");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Insert failed");
-            }
-            try
-            {
-                string queryString = "SELECT UserName, LoginDateTime FROM tblLogin";
-                OleDbCommand cmd = new OleDbCommand(queryString, con);
-                DataSet login = new DataSet();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Insert failed");
-            }
-            con.Close();
         }
 
         public static void AmendAddInsertData_2(string SQL_2) 
