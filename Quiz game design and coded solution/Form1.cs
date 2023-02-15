@@ -75,11 +75,11 @@ namespace Quiz_game_design_and_coded_solution
 
             // timer1.Start(); // this starts the timer for when the program runs
 
-            /*//string SQL_2 = "INSERT INTO tblUserScores (UserName, TestDate, Score) VALUES ('" + User + "','" + LoginDateTime + "','" + Score + "');";
-            //DBCon.AmendAddInsertData_2(SQL_2);
-            //timer1.Start();
+            string SQL_2 = "INSERT INTO tblUserScores (UserName, TestDate, Score) VALUES ('" + User + "','" + LoginDateTime + "','" + Score + "');";
+            DBCon.AmendAddInsertData_2(SQL_2);
+            timer1.Start();
             string SQL_3 = "INSERT INTO tblUser (UserName, Forname, Surname, Form, DOB) VALUES ('" + User + "','" + Forname + "','" + Surname + "','" + FORM + "','" + DOB + "')";
-            DBCon.AmendAddInsertData(SQL_3);*/
+            DBCon.AmendAddInsertData(SQL_3);
 
 
         }
@@ -159,7 +159,7 @@ namespace Quiz_game_design_and_coded_solution
         }
 
 
-        private void btnRegister_Click(object sender, EventArgs e)
+       /* private void btnRegister_Click(object sender, EventArgs e)
         {
             // WHat is this?
             MessageBox.Show("Welcome to the quiz game" + "," + textbox_Forname.Text + "," + "to continue please select another mode"); // this will output a welcome message to the user
@@ -175,8 +175,24 @@ namespace Quiz_game_design_and_coded_solution
             this.Show();
             timer1.Enabled = true;
             timer1.Start();
+        }*/
+
+        private void btnRegister_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Welcome to the quiz game" + "," + textbox_Forname.Text + "," + "to continue please select another mode"); // this will output a welcome message to the user
+            string User = label5.Text;
+            User = System.Environment.UserName;
+            lblUserName_Register.Text = User;
+            string Forename = textbox_Forname.Text;
+            string Surname = textbox_Surname.Text;
+            string FORM = textbox_Form.Text;
+            string DOB = Textbox_DOB.Text;
+            string SQL_3 = "INSERT INTO tblUser (UserName, Forname, Surname, Form, DOB) VALUES ('" + User + "','" + Forname + "','" + Surname + "','" + FORM + "','" + DOB + "');";
+            DBCon.AmendAddInsertData_3(SQL_3);
+            this.Show();
+            timer1.Enabled = true;
+            timer1.Start();
         }
-       
     }
 }
 

@@ -22,7 +22,7 @@ namespace Quiz_game_design_and_coded_solution
         int totalQuestions;
         DateTime startTime = DateTime.Now;
         int[] goArray;
-        static string FilePath = @"P:\6th Form Computing\16MunirY\NEA FEBURARY WEEK 2 UPDATED\NEA-TECHNICAL-SOLUTION-5-2-2023-main\h.txt";
+        static string FilePath = @"D:\NEA TECHNICAL SOLUTION\9-02-2023---NEA-UPDATED-PROJECT-main\Quiz game design and coded solution\bin\Debug\h.txt";
         List<string> questions;
 
 
@@ -71,34 +71,23 @@ namespace Quiz_game_design_and_coded_solution
             askQuestion(questionNumber, optionnumber);
 
 
-            /*if (questionNumber == totalQuestions)
-            {
-                // Working out the percentage 
-
-                percentage = (int)Math.Round((double)(score * 100) / totalQuestions);
-
-                // this will display when the quiz has ended 
-                MessageBox.Show("Quiz Ended!" + Environment.NewLine + "You have answered " + score + "questions correctly" + Environment.NewLine +
-                    "Your total percentage is" + percentage + "%" + Environment.NewLine +
-                    "Click OK to play again");
-                score = 0; // this will reset the code to 0
-                questionNumber = 0;
-                askQuestion(questionNumber, 0);
-            }*/
+           
         }
 
         private void askQuestion(int qnum, int optionnumber)
         {
 
             pictureBox1.Image = Properties.Resources.images;
+            label1.Text = questions[qnum - 1]; // the question asked to the user
+            string[] options = new string[] { questions[qnum + 1], questions[qnum + 2], questions[qnum + 3], questions[qnum + 4] };
 
             try
             {
                 label1.Text = questions[qnum]; // the question asked to the user
-                button1.Text = questions[qnum + 1]; // option 1
-                button2.Text = questions[qnum + 2]; // option 2
-                button3.Text = questions[qnum + 3];// option 3
-                button4.Text = questions[qnum + 4]; // option 4
+                button1.Text = options[0]; // option 1
+                button2.Text = options[1]; // option 2
+                button3.Text = options[2];// option 3
+                button4.Text = options[3]; // option 4
 
                 correctAnswer = Convert.ToInt32(questions[(qnum * 6) + 5]); // the correct is 5 passed the question
 
